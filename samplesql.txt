@@ -1,0 +1,42 @@
+CREATE DATABASE cricket_etl;
+USE cricket_etl;
+
+-- Matches table
+CREATE TABLE matches (
+    id INT PRIMARY KEY,
+    season INT,
+    city VARCHAR(50),
+    date DATE,
+    team1 VARCHAR(50),
+    team2 VARCHAR(50),
+    toss_winner VARCHAR(50),
+    toss_decision VARCHAR(10),
+    result VARCHAR(20),
+    dl_applied BOOLEAN,
+    winner VARCHAR(50),
+    win_by_runs INT,
+    win_by_wickets INT,
+    player_of_match VARCHAR(50),
+    venue VARCHAR(100),
+    umpire1 VARCHAR(50),
+    umpire2 VARCHAR(50),
+    umpire3 VARCHAR(50)
+);
+
+-- Deliveries table
+CREATE TABLE deliveries (
+    match_id INT,
+    inning INT,
+    over_number INT,
+    ball INT,
+    batsman VARCHAR(50),
+    non_striker VARCHAR(50),
+    bowler VARCHAR(50),
+    batsman_runs INT,
+    extra_runs INT,
+    total_runs INT,
+    is_wicket INT,
+    dismissal_kind VARCHAR(50),
+    player_dismissed VARCHAR(50),
+    fielder VARCHAR(50)
+);
